@@ -16,10 +16,9 @@ function draw() {
 }
 */
 
-setInterval(draw, 1000);
+//setInterval(draw, 100);
 
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+function drawO() {
   var rad = Math.floor(Math.random() * 50) + 1;
   var xPos = Math.floor(Math.random() * (canvas.width - (rad * 2))) + rad;
   var yPos = Math.floor(Math.random() * (canvas.height - (rad * 2))) + rad;
@@ -30,6 +29,30 @@ function draw() {
   ctx.stroke();
 }
 
+function drawX() {
+  var xCorn = Math.floor(Math.random() * canvas.width);
+  var yCorn = Math.floor(Math.random() * canvas.height);
+  var side = Math.floor(Math.random() * canvas.width);
+  ctx.beginPath();
+  ctx.strokeRect(xCorn, yCorn, side, side);
+  ctx.stroke();
+}
+
+function circles() {
+  var int = setInterval(step, 100);
+  var counter = 0;
+
+  function step() {
+    if ((counter % 20) == 0) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    } else {
+      drawX();
+    }
+    counter ++;
+  }
+}
+
+circles();
 /*
 setInterval( function() {
   ctx.beginPath();
