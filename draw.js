@@ -30,16 +30,17 @@ function drawO() {
 }
 
 function drawX() {
-  var xCorn = Math.floor(Math.random() * canvas.width);
-  var yCorn = Math.floor(Math.random() * canvas.height);
-  var side = Math.floor(Math.random() * canvas.width);
+  var side = (Math.floor(Math.random() * 50) + 1);
+  //side = Math.abs(side);
+  var xCorn = Math.floor(Math.random() * (canvas.width - side));
+  var yCorn = Math.floor(Math.random() * (canvas.height - side));
   ctx.beginPath();
   ctx.strokeRect(xCorn, yCorn, side, side);
   ctx.stroke();
 }
 
 function circles() {
-  var int = setInterval(step, 100);
+  var int = setInterval(step, 500);
   var counter = 0;
 
   function step() {
