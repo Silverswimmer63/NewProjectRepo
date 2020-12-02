@@ -12,24 +12,14 @@
     <div>
       <h1>JavaScript Output</h1>
       <p id="output">JavaScript file not loading.</p>
-      <canvas id="myCanvas" width="400" height="300"
+      <canvas id="myCanvas" width="400" height="400"
         style="border:1px solid #c3c3c3;">
       </canvas>
       <script>
-        var canvas = document.getElementById("myCanvas");
-        var ctx = canvas.getContext("2d");
-        ctx.fillStyle = "#FF0000";
-        ctx.beginPath();
-        ctx.arc(175, 175, 50, 0, Math.PI * 2, true); // Outer circle
-        ctx.moveTo(210, 175);
-        ctx.arc(175, 175, 35, 0, Math.PI, false);  // Mouth (clockwise)
-        ctx.moveTo(165, 165);
-        ctx.arc(160, 165, 5, 0, Math.PI * 2, true);  // Left eye
-        ctx.moveTo(195, 165);
-        ctx.arc(190, 165, 5, 0, Math.PI * 2, true);  // Right eye
-        ctx.stroke();
+
       </script>
     </div>
   </body>
   <script src="javascript.js"></script>
+  <script src="draw.js"></script>
 </html>
