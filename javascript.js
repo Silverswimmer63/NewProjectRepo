@@ -28,12 +28,12 @@ if it is a rect, it should return rect(center.x - <something>, center.y - <somet
 
 class Asset {
   constructor(type, center, num1, num2) {
-    this.type = type;
+    this.type = type.twoLowerCase();
     this.center = center;
     this.num1 = num1;
     this.num2 = num2;
   }
-  
+
 }
 
 /*----------------------------------------- Do not make changes below this line

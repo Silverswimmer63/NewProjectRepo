@@ -40,9 +40,8 @@ function drawX() {
 }
 
 function circles() {
-  var int = setInterval(step, 500);
+  var int = setInterval(step, 100);
   var counter = 0;
-
   function step() {
     if ((counter % 20) == 0) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
