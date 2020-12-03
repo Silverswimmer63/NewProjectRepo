@@ -30,22 +30,27 @@ function drawO() {
 }
 
 function drawX() {
-  var side = (Math.floor(Math.random() * 50) + 1);
-  //side = Math.abs(side);
+  var side = Math.floor(Math.random() * 50) + 1;
   var xCorn = Math.floor(Math.random() * (canvas.width - side));
   var yCorn = Math.floor(Math.random() * (canvas.height - side));
   ctx.beginPath();
   ctx.strokeRect(xCorn, yCorn, side, side);
   ctx.stroke();
 }
+/*
+function circleBounce() {
+  var rad = 50;
+}
+*/
 
 function circles() {
-  var int = setInterval(step, 100);
+  var int = setInterval(step, 300);
   var counter = 0;
   function step() {
     if ((counter % 20) == 0) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     } else {
+      drawO();
       drawX();
     }
     counter ++;
@@ -53,6 +58,7 @@ function circles() {
 }
 
 circles();
+
 /*
 setInterval( function() {
   ctx.beginPath();
