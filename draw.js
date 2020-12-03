@@ -37,10 +37,65 @@ function drawX() {
   ctx.strokeRect(xCorn, yCorn, side, side);
   ctx.stroke();
 }
-/*
-function circleBounce() {
-  var rad = 50;
+
+/* This makes a ball bounce arround
+var canvas = document.getElementById( "myCanvas" );
+var context = canvas.getContext( "2d" );
+var width = 400;
+var height = 200;
+
+var ball = {
+    x: 100,
+    y: 100,
+    radius: 25,
+    xSpeed: 3,
+    ySpeed: 3,
+    draw: function( ctx ) {
+    	ctx.beginPath();
+        ctx.arc( this.x, this.y, this.radius, 0, 2*Math.PI );
+        ctx.fill();
+    },
+    move: function() {
+        this.x += this.xSpeed;
+        this.y += this.ySpeed;
+    }
 }
+
+setInterval( function(){
+
+    context.clearRect( 0, 0, width, height );
+    context.strokeRect( 0, 0, width, height );
+
+    ball.move();
+
+    // right
+    if ( ball.x + ball.radius >= width ) {
+    	ball.x = width - ball.radius;
+        ball.xSpeed = -ball.xSpeed;
+    }
+
+    // left
+    if ( ball.x - ball.radius <= 0 ) {
+    	ball.x = ball.radius;
+        ball.xSpeed = -ball.xSpeed;
+    }
+
+    // down
+    if ( ball.y + ball.radius >= height ) {
+    	ball.y = height - ball.radius;
+        ball.ySpeed = -ball.ySpeed;
+    }
+
+    // up
+    if ( ball.y - ball.radius <= 0 ) {
+    	ball.y = ball.radius;
+        ball.ySpeed = -ball.ySpeed;
+    }
+
+    ball.draw( context );
+
+}, 10 );
+
 */
 
 function circles() {
