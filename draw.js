@@ -98,15 +98,39 @@ setInterval( function(){
 
 */
 
+/* Instructions for ball bouncing project
+Make a ball at (0, 0), it's center should be one radius from each side
+It should then move down and right
+When it hits a wall, it's movment should then reverse
+(x +, y+), (x+, y-), (x-, y-), (x-, y+), (x+, y+)
+Make sure to test each direction each time
+inside "loop" , need to check circles location
+check circles direction and location
+direction (add 1 for +, subtract 1 for -, )
+Eg: if(circle + rad + 1 > width)
+flip xVal
+ */
+function ballBounce() {
+  var int = setInterval();
+  //need to track location, direction, radius
+}
+
+//fancy loop getaround for animation
 function circles() {
-  var int = setInterval(step, 300);
+  // the if for bouncing balls will deal with position
+  var int = setInterval(step, 500);
   var counter = 0;
   function step() {
-    if ((counter % 20) == 0) {
+    if ((counter %20) == 0) {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-    } else {
+      console.log("----------------------------------RESET----------------------------------");
+    }
+    if ((counter % 2) == 0) {
       drawO();
+      console.log("circle");
+    } else {
       drawX();
+      console.log("square");
     }
     counter ++;
   }
